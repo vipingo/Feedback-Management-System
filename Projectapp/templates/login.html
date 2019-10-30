@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+
+{% block body_block %}
+
+    <form method="post">
+        <h2> Login Here:</h2>
+        {% csrf_token %}
+        <label>{{ form.Username|crispy }}</label>
+        <input type="text" name="username" placeholder="Username">
+        <label >{{ form.Password|crispy }}</label>
+        <input type="password" name="password" placeholder="Password">
+
+
+        <button type="submit" class="btn btn-success">Login</button>
+
+
+    </form>
+
+
+{% endblock %}

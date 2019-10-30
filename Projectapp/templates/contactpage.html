@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+    <style>
+        .contact-form{
+          width: 85%;
+          max-width: 600px;
+          background: #f1f1f1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          padding: 30px 40px;
+          box-sizing: border-box;
+          border-radius: 8px;
+          text-align: center;
+          box-shadow: 0 0 20px #000000b3;
+          font-family: "Montserrat", sans-serif;
+        }
+
+        .txtb{
+          border: 1px solid #1f2b2a;
+          margin: 8px 0;
+          padding: 12px 18px;
+          border-radius: 8px;
+        }
+
+        .txtb label{
+          display: block;
+          text-align: left;
+          color: #333;
+          text-transform: uppercase;
+          font-size: 14px;
+        }
+
+        .txtb input, .txb textarea{
+          width: 100%;
+          border: none;
+          background: none;
+          outline: none;
+          font-size: 18px;
+          margin-top: 6px;
+        }
+
+        .btn btn-success{
+          display: inline-block;
+          background:
+          padding: 14px 0;
+          color: white;
+          text-transform: uppercase;
+          cursor: pointer;
+          margin-top: 8px;
+          width: 100%;
+        }
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+{% block body_block %}
+
+<!--- Navigation --->
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a  class="navbar-brand" href="#"><img src=""></a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggle-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Home/">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">About us</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="https://www.ongcindia.com/wps/wcm/connect/en/home/">Career</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Form/">Medical-Facilities</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/contact/">Contact</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'Projectapp:user_login' %}">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<form method="post" class="contact-form">
+    {% csrf_token %}
+    <div class="txtb">
+        <label>Name :</label>
+        <input type="text" name="" value="" placeholder="Enter Your Name">
+    </div>
+    <div class="txtb">
+        <label>Email :</label>
+        <input type="email" name="" value="" placeholder="Enter Your Email">
+    </div>
+    <div class="txtb">
+        <label>Phone :</label>
+        <input type="number" name="" value="" placeholder="Enter Your Number">
+    </div>
+    <div class="txtb">
+        <label>Subject :</label>
+        <textarea></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+{% endblock %}
+</body>
+</html>

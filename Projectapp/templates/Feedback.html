@@ -1,0 +1,238 @@
+<!doctype html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>Feedback Form</title>
+
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+    function MyFunction() {
+      window.open("http://127.0.0.1:8000/Projectapp/Criticality/","_blank","toolbar=yes, scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+    }
+
+    </script>
+
+    <script>
+    function MyFunction1() {
+      window.open("http://127.0.0.1:8000/Projectapp/status/","_blank","toolbar=yes, scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+    }
+
+    </script>
+
+    <script>
+        $(function() {
+          $( " .datepicker" ) .datepicker({
+            changeMonth: true,
+            changeYear: true,
+            input_format : "yyyy-mm-dd",
+          });
+        });
+
+    </script>
+
+    <script>
+        function comparedate(){
+            var from = document.getElementById("id_from").value;
+            var to = document.getElementById("id_to").value;
+            if(from<to){
+               $("# error-warning").show();
+               $("# error-warning").text("Please correct the date ");
+               return false;
+
+            }
+        }
+    </script>
+
+
+
+  </head>
+  <body>
+
+  {% block body_block %}
+  <!--- Navigation --->
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a  class="navbar-brand" href="#"><img src=""></a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggle-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Home/">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">About us</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="https://www.ongcindia.com/wps/wcm/connect/en/home/">Career</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Form/">Medical-Facilities</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/contact/">Contact</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'Projectapp:user_login' %}">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+
+
+  <h2 class="text-center">Feedback Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6 mb-0" id="datepicker">
+                {{ form.Date|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Doctor_Id|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Employee_Id|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Patient_Name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Relation|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Primary_Diagnosis|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Criticality|as_crispy_field }}
+                <button type="button" class="btn btn-primary" onclick="MyFunction()">Add</button>
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Stay_Expected|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Hospital_Name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0" id="datepicker1">
+                {{ form.Date_of_Issue|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0" id="datepicker2">
+                {{ form.Admission_Date|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0" id="datepicker3">
+                {{ form.Discharge_On|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Relief_Status|as_crispy_field }}
+                <button type="button" class="btn btn-primary" onclick="MyFunction1()">Add</button>
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Diagnosis_by_Hospital|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Admin_Doctor|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Post_hospital_treatment_visit_frequency|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Services_Reception|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Reception_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Services_Doctorduty|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Doctorduty_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Services_Bloodbank|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Bloodbank_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.OT_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.OT_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Services_Nursingcare|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Nursingcare_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.OPD_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.OPD_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Pharmacy_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Pharmacy_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Pharmacy_Services_Supply_to_room|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Labservices_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Labservices_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Housekeeping_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Housekeeping_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Security_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Security_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Discharge_Formality_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Discharge_Formality_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Overall_satisfaction_Services|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Overall_satisfaction_Rating|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Why_to_choose_this_hospital|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Why_not_to_choose_this_hospital|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.Doctor_Feedback_Services|as_crispy_field }}
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+  {% endblock %}
+  </body>
+</html>

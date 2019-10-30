@@ -1,0 +1,217 @@
+{% load staticfiles %}
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+	<title>Homepage</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+
+</head>
+
+<body>
+<!--- Navigation --->
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a  class="navbar-brand" href="#"><img src=""></a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span class="navbar-toggle-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Home/">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">About us</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="https://www.ongcindia.com/wps/wcm/connect/en/home/">Career</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Form/">Medical-Facilities</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:8000/Projectapp/contact/">Contact</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'Projectapp:user_login' %}">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!--- Image Slider ---
+
+<div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1"></li>
+		<li data-target="#slides" data-slide-to="2"></li>
+	</ul>
+</div>
+
+<div class="carousel-inner">
+	<div class="carousel-item active">
+		<img src="{% static "images/runners.gif" %}">
+	</div>
+	<div class="carousel-item">
+		<img src="{% static "images/med1.jpg" %}">
+	</div>
+	<div class="carousel-item">
+		<img src="{% static "images/earn.jpg" %}">
+	</div>
+</div>
+--->
+
+
+<!--- Jumbotron --->
+<div class="container-fluid">
+	<div class="row jumbotron">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+			<p class="lead">
+				We want to provides the advice and evidence needed for people to lead healthy lives.
+				Good health requires the commitment of many, from lawmakers to lunch makers. And there are steps each of us can take to promote and protect health.
+				These include being more active, eating healthy, and avoiding tobacco and harmful use of alcohol.
+			</p>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+			<a href="#"><button type="button" class="btn btn-outline-secondary btn-lg">Web Hosting</button> </a>
+		</div>
+	</div>
+</div>
+
+
+<!-- Cards -->
+<div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-md-4">
+			<div class="card">
+				<img src="{% static "images/diet.jpg" %}" class="card-img-top">
+				<div class="card-body">
+					<h4 class="card-title">Healthy Diet</h4>
+					<p class="card-text">
+						A healthy diet is essential for good health and being protected against many chronic illnesses.
+				 		Eating vegetables and fruit and consuming less salt, sugar and saturated fats are essential for a healthy diet.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="{% static "images/kills.jpg" %}">
+				<div class="card-body">
+					<h4 class="card-title">Tobacco</h4>
+					<p class="card-text">
+						Using any tobacco product is harmful.
+						Inhaling tobacco smoke exposes users to more than 7000 toxicants and at least 70 carcinogens, damaging the whole body.
+						A regular smoker typically loses more than a decade of life.Combustible tobacco use is extremely hazardous to human health and is responsible for more than 90% of tobacco-attributable death and disease.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="card">
+				<img class="card-img-top" src="{% static "images/chart.png" %}">
+				<h4 class="card-title"></h4>
+				<p class="card-text">
+					In today's developing countries, the rise of chronic noncommunicable diseases reflects changes in lifestyle and diet, as well as aging. 
+					 The potential economic and societal costs of
+					 noncommunicable diseases of this type rise sharply with age and have the ability to affect economic growth.
+					 A World Health Organization analysis in 23 low- and middle-income countries
+					 estimated the economic losses from three noncommunicable diseases (heart disease,stroke, and diabetes)
+					in these countries would total US$83 billion between 2006 and 2015.
+					Reducing severe disability from disease and health conditions is one key to holding
+					down health and social costs.
+				</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--- Fixed background -->
+<figure>
+	<div class="fixed-wrap">
+		<div id="fixed"></div>
+	</div>
+</figure>
+
+<!-- Two Column Section --->
+
+<div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-lg-6">
+			<h2><b>Our Philosphy</b></h2>
+			<p>
+				Health is one of the fundamental rights of every human being
+		   		without distinction of race, religion, economic or social-condition.
+			</p>
+			<p>
+				Everyone should have access to the health services they need,
+		   		when and where they need them, without suffering financial hardship. No one should get sick and die just because they are poor,
+		   		or because they cannot access the health services they need.
+			</p>
+			<p>
+				When people are marginalized or face stigma or discrimination, their physical and mental health suffers. Discrimination in health care is
+		   		unacceptable and is a major barrier to development. But when people are given the oppurtunity to be active participants in their own care, instead
+		   		of passive recipients, their human rights respected, the outcomes are better and health systems become more efficient.
+			</p>
+			<br>
+
+		</div>
+		<div class="col-lg-6">
+			<img src="{% static "images/humanright.gif" %}" class="img-fluid">
+		</div>
+	</div>
+	<hr class="my-4">
+</div>
+
+<!--- Connect --->
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<h2>Connect</h2>
+		</div>
+		<div class="col-12 social padding">
+			<a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> </a>
+			<a href="https://twitter.com/login?lang=en"><i class="fab fa-twitter"></i></a>
+			<a href=""><i class="fab fa-google-plus-g"></i></a>
+			<a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i> </a>
+			<a href="https://www.youtube.com/?gl=IN"><i class="fab fa-youtube"></i> </a>
+		</div>
+	</div>
+</div>
+
+<!-- Footer --->
+<footer>
+	<div class="container-fluid padding">
+		<div class="row text-center">
+			<img src="">
+			<hr class="dark">
+			<!--<p>
+				Registered Office: Plot No. 5A- 5B Nelson Mandela Road,<br>
+			    Vasant Kunj, New Delhi: 110070,<br>
+			    Corporate Identity Number: L74899DL1993GOI054155,<br>
+			    Telephone No. 011-26750998;<br>
+			    e-mail: vijan_ar@ongc.co.in
+			</p>
+			--->
+			<p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8399483667686!2d77.15449031455755!3d28.544530094810405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1dd24e79dc41%3A0x7f174eaf8d62a4!2sONGC+Videsh+Limited!5e0!3m2!1sen!2sin!4v1559884871885!5m2!1sen!2sin" width="1400" height="490" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+		</div>
+	</div>
+</footer>
+
+
+
+</body>
+</html>

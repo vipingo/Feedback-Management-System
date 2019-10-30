@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Relief Status</title>
+
+    <script type="text/javascript">
+    function dismissAddAnotherPopup(win) {
+        win.close();
+    }
+    </script>
+
+
+</head>
+<body>
+
+<form action="" method="post" name="Relief StatusForm">
+        {% csrf_token %}
+
+    Status :<input type="text" name="status" id=""><br>
+    <input type="submit" value="Save" class="default" onclick="dismissAddAnotherPopup(win); window.close(); "/>
+</form>
+
+
+</body>
+</html>

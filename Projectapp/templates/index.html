@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+{% block body_block %}
+
+<!--- Navigation --->
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src=""></a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
+                class="navbar-toggle-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Home/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.ongcindia.com/wps/wcm/connect/en/home/">Career</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:8000/Projectapp/Form/">Medical-Facilities</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:8000/Projectapp/contact/">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'Projectapp:user_login' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<ul>
+    <li> Name: {{ user.username }}</li>
+    <li> Email: {{ user.email}}</li>
+</ul>
+
+<h2><b>Your Filled Details are Here:</b></h2>
+{% for feedback in users %}
+<ul>
+    <li> Date: {{ feedback.Date }}</li>
+    <li> Doctor Id: {{ feedback.Doctor_Id}}</li>
+    <li> Employee Id: {{ feedback.Employee_Id }}</li>
+    <li> Patient Name: {{ feedback.Patient_Name}}</li>
+    <li> Relation: {{ feedback.Relation }}</li>
+    <li> Primary Diagnosis: {{ feedback.Primary_Diagnosis }}</li>
+    <li> Criticality: {{ feedback.Criticality }}</li>
+    <li> Expected Stay: {{ feedback.Stay_Expected}}</li>
+    <li> Hospital Name: {{ feedback.Hospital_Name }}</li>
+    <li> Issue Date: {{ feedback.Date_of_Issue }}</li>
+    <li> Admission Date: {{ feedback.Admission_Date }}</li>
+    <li> Discharge on: {{ feedback.Discharge_On }}</li>
+    <li> Relief Status: {{ feedback.Relief_Status }}</li>
+    <li> Hospital Diagnosis: {{ feedback.Diagnosis_by_Hospital }}</li>
+    <li> Admin Doctor: {{ feedback.Admin_Doctor }}</li>
+    <li> Hospital visit frequency: {{ feedback.Post_hospital_treatment_visit_frequency }}</li>
+    <li> Reception Service: {{ feedback.Services_Reception }}</li>
+    <li> Rec. Remarks: {{ feedback.Reception_Remarks }}</li>
+    <li> Doctor duty services: {{ feedback.Services_Doctorduty }}</li>
+    <li> Doc. duty Remarks: {{ feedback.Doctorduty_Remarks }}</li>
+    <li> Bloodbank Services: {{ feedback.Services_Bloodbank }}</li>
+    <li> Bloodbank Remakrs: {{ feedback.Bloodbank_Remarks }}</li>
+    <li> OT Services: {{ feedback.OT_Services }}</li>
+    <li> OT Remarks: {{ feedback.OT_Remarks }}</li>
+    <li> Nursingcare Service: {{ feedback.Services_Nursingcare }}</li>
+    <li> Nursingcare Remarks: {{ feedback.Nursingcare_Remarks }}</li>
+    <li> OPD Services: {{ feedback.OPD_Services }}</li>
+    <li> OPD Remarks: {{ feedback.OPD_Remarks }}</li>
+    <li> Pharmacy Services: {{ feedback.Pharmacy_Services }}</li>
+    <li> Pharmacy Remarks: {{ feedback.Pharmacy_Remarks}}</li>
+    <li> Pharmacy supply to room: {{ feedback.Pharmacy_Services_Supply_to_room }}</li>
+    <li> Labservice Services: {{ feedback.Labservices_Services }}</li>
+    <li> Labservice Remarks: {{ feedback.Labservices_Remarks }}</li>
+    <li> Housekeeping Service: {{ feedback.Housekeeping_Services }}</li>
+    <li> Housekeeping Remarks: {{ feedback.Housekeeping_Remarks }}</li>
+    <li> Security Services: {{ feedback.Security_Services }}</li>
+    <li> Security Remarks: {{ feedback.Security_Remarks }}</li>
+    <li> Discharge Formailty: {{ feedback.Discharge_Formality_Services }}</li>
+    <li> Discharge Formality Remarks: {{ feedback.Discharge_Formality_Remarks }}</li>
+    <li> Overall Satisfaction: {{ feedback.Overall_satisfaction_Services }}</li>
+    <li> Satisfaction Remarks: {{ feedback.Overall_satisfaction_Remarks }}</li>
+    <li> Why to choose this hospital: {{ feedback.Why_to_choose_this_hospital}}</li>
+    <li> Why not to choose this hospital: {{ feedback.Why_not_to_choose_this_hospital }}</li>
+    <li> Doc. F|B Services: {{ feedback.Doctor_Feedback_Services }}</li>
+</ul>
+
+{% endfor %}
+{% endblock %}
+</body>
+</html>

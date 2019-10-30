@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Criticality</title>
+
+    <script type="text/javascript">
+    function dismissAddAnotherPopup(win) {
+        win.close();
+    }
+    </script>
+
+</head>
+<body>
+
+<form action="" method="post" name="CriticalityForm">
+        {% csrf_token %}
+
+    Criticality :<input type="text" name="criticality" id=""><br>
+    <input type="submit" value="Save" class="default" onclick="dismissAddAnotherPopup(win); window.close(); "/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <meta charset="utf-8">
+      <title>Base</title>
+    <!-- Latest compiled and minified CSS -->
+
+</head>
+
+  <body>
+
+    <!--- Navigation --->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+	        <a  class="navbar-brand" href="#"><img src=""></a>
+	        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+		    <span class="navbar-toggle-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarResponsive">
+		        <ul class="navbar-nav ml-auto">
+			        <li class="nav-item active">
+				        <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+			        </li>
+			        <li class="nav-item active">
+				        <a class="nav-link" href="{% url 'Projectapp:register' %}">Registration</a>
+                    </li>
+			        <li class="nav-item active">
+				        <a class="nav-link" href="{% url 'Projectapp:user_login' %}">Login</a>
+			        </li>
+			        <li class="nav-item active">
+				        <a class="nav-link" href="{% url 'Projectapp:user_login' %}">Logout</a>
+			        </li>
+		        </ul>
+	        </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        {% block body_block %}
+        {% endblock %}
+    </div>
+  </body>
+</html>
